@@ -13,9 +13,9 @@ const rl = readline.createInterface({
 request(urlArg, (error, response, body) => {
   fs.writeFile(filePathArg, body, function(err) {
     if (err) {
-      console.log("Error: The file path does not exist.")
+      console.log("Error: The file path does not exist.");
       process.exit();
-    } else if (fs.existsSync(filePathArg)){
+    } else if (fs.existsSync(filePathArg)) {
       rl.question(`This file path already exists, type and enter "y" if you would like to overwrite ${filePathArg}: `, (key) => {
         if (key === "y") {
           console.log(`Downloaded and saved ${body.length} bytes to ${filePathArg}`);
